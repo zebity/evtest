@@ -1,23 +1,52 @@
-*~
-*.[1oa]
+# Prerequisites
+*.d
 
-.deps
-Makefile
-Makefile.in
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
 
-/aclocal.m4
-/autom4te.cache
-/compile
-/config.cache
-/config.h
-/config.h.in
-/config.log
-/config.status
-/configure
-/depcomp
-/install-sh
-/missing
-/stamp-h1
+# Linker output
+*.ilk
+*.map
+*.exp
 
-/evtest
-/evtest-capture
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
