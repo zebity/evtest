@@ -39,7 +39,7 @@
 #define EV_SYN 0
 #endif
 
-#define FEDORA_CORE_R1_KERNEL_2_4_2_4
+#define FEDORA_CORE_R1_KERNEL_2_4
 
 char *events[EV_MAX + 1] = {
 	[0 ... EV_MAX] = NULL,
@@ -48,7 +48,7 @@ char *events[EV_MAX + 1] = {
 	[EV_MSC] = "Misc",			[EV_LED] = "LED",
 	[EV_SND] = "Sound",			[EV_REP] = "Repeat",
 	[EV_FF] = "ForceFeedback",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 		[EV_PWR] = "Power",
 	[EV_FF_STATUS] = "ForceFeedbackStatus",
 #endif
@@ -98,12 +98,12 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_KPPLUS] = "KPPlus",		[KEY_KP1] = "KP1",
 	[KEY_KP2] = "KP2",			[KEY_KP3] = "KP3",
 	[KEY_KP0] = "KP0",			[KEY_KPDOT] = "KPDot",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 	[KEY_ZENKAKUHANKAKU] = "Zenkaku/Hankaku",
 #endif
 	[KEY_102ND] = "102nd",
 	[KEY_F11] = "F11",			[KEY_F12] = "F12",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 	[KEY_RO] = "RO",
 	[KEY_KATAKANA] = "Katakana",
 	[KEY_HIRAGANA] = "HIRAGANA",		[KEY_HENKAN] = "Henkan",
@@ -123,7 +123,7 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_VOLUMEUP] = "VolumeUp",		[KEY_POWER] = "Power",
 	[KEY_KPEQUAL] = "KPEqual",		[KEY_KPPLUSMINUS] = "KPPlusMinus",
 	[KEY_PAUSE] = "Pause",			[KEY_KPCOMMA] = "KPComma",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 	[KEY_HANGUEL] = "Hanguel",		[KEY_HANJA] = "Hanja",
 	[KEY_YEN] = "Yen",
 #endif
@@ -165,7 +165,7 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_PAUSECD] = "PauseCD",		[KEY_PROG3] = "Prog3",
 	[KEY_PROG4] = "Prog4",			[KEY_SUSPEND] = "Suspend",
 	[KEY_CLOSE] = "Close",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 	[KEY_PLAY] = "Play",
 	[KEY_FASTFORWARD] = "Fast Forward",	[KEY_BASSBOOST] = "Bass Boost",
 	[KEY_PRINT] = "Print",			[KEY_HP] = "HP",
@@ -188,7 +188,7 @@ char *keys[KEY_MAX + 1] = {
 	[BTN_MIDDLE] = "MiddleBtn",		[BTN_SIDE] = "SideBtn",
 	[BTN_EXTRA] = "ExtraBtn",		[BTN_FORWARD] = "ForwardBtn",
 	[BTN_BACK] = "BackBtn",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 			[BTN_TASK] = "TaskBtn",
 #endif
 	[BTN_TRIGGER] = "Trigger",		[BTN_THUMB] = "ThumbBtn",
@@ -211,7 +211,7 @@ char *keys[KEY_MAX + 1] = {
 	[BTN_TOOL_MOUSE] = "ToolMouse",		[BTN_TOOL_LENS] = "ToolLens",
 	[BTN_TOUCH] = "Touch",			[BTN_STYLUS] = "Stylus",
 	[BTN_STYLUS2] = "Stylus2",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 	[BTN_TOOL_DOUBLETAP] = "Tool Doubletap",
 	[BTN_TOOL_TRIPLETAP] = "Tool Tripletap", [BTN_GEAR_DOWN] = "WheelBtn",
 	[BTN_GEAR_UP] = "Gear up",		[KEY_OK] = "Ok",
@@ -325,7 +325,7 @@ char *absolutes[ABS_MAX + 1] = {
 	[ABS_HAT3Y] = "Hat 3Y",		[ABS_PRESSURE] = "Pressure",
 	[ABS_DISTANCE] = "Distance",	[ABS_TILT_X] = "XTilt",
 	[ABS_TILT_Y] = "YTilt",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 		[ABS_TOOL_WIDTH] = "Tool Width",
 	[ABS_VOLUME] = "Volume",i
 #endif
@@ -348,7 +348,7 @@ char *absolutes[ABS_MAX + 1] = {
 char *misc[MSC_MAX + 1] = {
 	[ 0 ... MSC_MAX] = NULL,
 	[MSC_SERIAL] = "Serial",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 	[MSC_PULSELED] = "Pulseled",
 	[MSC_GESTURE] = "Gesture",	[MSC_RAW] = "RawData",
 	[MSC_SCAN] = "ScanCode",
@@ -372,7 +372,7 @@ char *repeats[REP_MAX + 1] = {
 char *sounds[SND_MAX + 1] = {
 	[0 ... SND_MAX] = NULL,
 	[SND_CLICK] = "Click",		[SND_BELL] = "Bell",
-#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4)
 	[SND_TONE] = "Tone"
 #endif
 };
@@ -466,7 +466,7 @@ int main (int argc, char **argv)
 			if (ev[i].type == EV_SYN) {
 				printf("Event: time %ld.%06ld, -------------- %s ------------\n",
 					ev[i].time.tv_sec, ev[i].time.tv_usec, ev[i].code ? "Config Sync" : "Report Sync" );
-#if defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+#if defined(FEDORA_CORE_R1_KERNEL_2_4)
 			} else if (ev[i].type == EV_MSC && (/* ev[i].code == MSC_RAW */ 0 || /* ev[i].code == MSC_SCAN */ 0)) {
 #else
 			} else if (ev[i].type == EV_MSC && (ev[i].code == MSC_RAW || ev[i].code == MSC_SCAN)) {
