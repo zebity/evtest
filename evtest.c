@@ -39,14 +39,19 @@
 #define EV_SYN 0
 #endif
 
+#define FEDORA_CORE_R1_KERNEL_2_4_2_4
+
 char *events[EV_MAX + 1] = {
 	[0 ... EV_MAX] = NULL,
 	[EV_SYN] = "Sync",			[EV_KEY] = "Key",
 	[EV_REL] = "Relative",			[EV_ABS] = "Absolute",
 	[EV_MSC] = "Misc",			[EV_LED] = "LED",
 	[EV_SND] = "Sound",			[EV_REP] = "Repeat",
-	[EV_FF] = "ForceFeedback",		[EV_PWR] = "Power",
+	[EV_FF] = "ForceFeedback",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+		[EV_PWR] = "Power",
 	[EV_FF_STATUS] = "ForceFeedbackStatus",
+#endif
 };
 
 char *keys[KEY_MAX + 1] = {
@@ -93,12 +98,19 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_KPPLUS] = "KPPlus",		[KEY_KP1] = "KP1",
 	[KEY_KP2] = "KP2",			[KEY_KP3] = "KP3",
 	[KEY_KP0] = "KP0",			[KEY_KPDOT] = "KPDot",
-	[KEY_ZENKAKUHANKAKU] = "Zenkaku/Hankaku", [KEY_102ND] = "102nd",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+	[KEY_ZENKAKUHANKAKU] = "Zenkaku/Hankaku",
+#endif
+	[KEY_102ND] = "102nd",
 	[KEY_F11] = "F11",			[KEY_F12] = "F12",
-	[KEY_RO] = "RO",			[KEY_KATAKANA] = "Katakana",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+	[KEY_RO] = "RO",
+	[KEY_KATAKANA] = "Katakana",
 	[KEY_HIRAGANA] = "HIRAGANA",		[KEY_HENKAN] = "Henkan",
 	[KEY_KATAKANAHIRAGANA] = "Katakana/Hiragana", [KEY_MUHENKAN] = "Muhenkan",
-	[KEY_KPJPCOMMA] = "KPJpComma",		[KEY_KPENTER] = "KPEnter",
+	[KEY_KPJPCOMMA] = "KPJpComma",
+#endif
+	[KEY_KPENTER] = "KPEnter",
 	[KEY_RIGHTCTRL] = "RightCtrl",		[KEY_KPSLASH] = "KPSlash",
 	[KEY_SYSRQ] = "SysRq",			[KEY_RIGHTALT] = "RightAlt",
 	[KEY_LINEFEED] = "LineFeed",		[KEY_HOME] = "Home",
@@ -111,8 +123,11 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_VOLUMEUP] = "VolumeUp",		[KEY_POWER] = "Power",
 	[KEY_KPEQUAL] = "KPEqual",		[KEY_KPPLUSMINUS] = "KPPlusMinus",
 	[KEY_PAUSE] = "Pause",			[KEY_KPCOMMA] = "KPComma",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
 	[KEY_HANGUEL] = "Hanguel",		[KEY_HANJA] = "Hanja",
-	[KEY_YEN] = "Yen",			[KEY_LEFTMETA] = "LeftMeta",
+	[KEY_YEN] = "Yen",
+#endif
+	[KEY_LEFTMETA] = "LeftMeta",
 	[KEY_RIGHTMETA] = "RightMeta",		[KEY_COMPOSE] = "Compose",
 	[KEY_STOP] = "Stop",			[KEY_AGAIN] = "Again",
 	[KEY_PROPS] = "Props",			[KEY_UNDO] = "Undo",
@@ -149,7 +164,9 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_F24] = "F24",			[KEY_PLAYCD] = "PlayCD",
 	[KEY_PAUSECD] = "PauseCD",		[KEY_PROG3] = "Prog3",
 	[KEY_PROG4] = "Prog4",			[KEY_SUSPEND] = "Suspend",
-	[KEY_CLOSE] = "Close",			[KEY_PLAY] = "Play",
+	[KEY_CLOSE] = "Close",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+	[KEY_PLAY] = "Play",
 	[KEY_FASTFORWARD] = "Fast Forward",	[KEY_BASSBOOST] = "Bass Boost",
 	[KEY_PRINT] = "Print",			[KEY_HP] = "HP",
 	[KEY_CAMERA] = "Camera",		[KEY_SOUND] = "Sound",
@@ -159,7 +176,9 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_SPORT] = "Sport",			[KEY_SHOP] = "Shop",
 	[KEY_ALTERASE] = "Alternate Erase",	[KEY_CANCEL] = "Cancel",
 	[KEY_BRIGHTNESSDOWN] = "Brightness down", [KEY_BRIGHTNESSUP] = "Brightness up",
-	[KEY_MEDIA] = "Media",			[KEY_UNKNOWN] = "Unknown",
+	[KEY_MEDIA] = "Media",
+#endif
+	[KEY_UNKNOWN] = "Unknown",
 	[BTN_0] = "Btn0",			[BTN_1] = "Btn1",
 	[BTN_2] = "Btn2",			[BTN_3] = "Btn3",
 	[BTN_4] = "Btn4",			[BTN_5] = "Btn5",
@@ -168,7 +187,10 @@ char *keys[KEY_MAX + 1] = {
 	[BTN_LEFT] = "LeftBtn",			[BTN_RIGHT] = "RightBtn",
 	[BTN_MIDDLE] = "MiddleBtn",		[BTN_SIDE] = "SideBtn",
 	[BTN_EXTRA] = "ExtraBtn",		[BTN_FORWARD] = "ForwardBtn",
-	[BTN_BACK] = "BackBtn",			[BTN_TASK] = "TaskBtn",
+	[BTN_BACK] = "BackBtn",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+			[BTN_TASK] = "TaskBtn",
+#endif
 	[BTN_TRIGGER] = "Trigger",		[BTN_THUMB] = "ThumbBtn",
 	[BTN_THUMB2] = "ThumbBtn2",		[BTN_TOP] = "TopBtn",
 	[BTN_TOP2] = "TopBtn2",			[BTN_PINKIE] = "PinkieBtn",
@@ -188,7 +210,9 @@ char *keys[KEY_MAX + 1] = {
 	[BTN_TOOL_AIRBRUSH] = "ToolAirbrush",	[BTN_TOOL_FINGER] = "ToolFinger",
 	[BTN_TOOL_MOUSE] = "ToolMouse",		[BTN_TOOL_LENS] = "ToolLens",
 	[BTN_TOUCH] = "Touch",			[BTN_STYLUS] = "Stylus",
-	[BTN_STYLUS2] = "Stylus2",		[BTN_TOOL_DOUBLETAP] = "Tool Doubletap",
+	[BTN_STYLUS2] = "Stylus2",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+	[BTN_TOOL_DOUBLETAP] = "Tool Doubletap",
 	[BTN_TOOL_TRIPLETAP] = "Tool Tripletap", [BTN_GEAR_DOWN] = "WheelBtn",
 	[BTN_GEAR_UP] = "Gear up",		[KEY_OK] = "Ok",
 	[KEY_SELECT] = "Select",		[KEY_GOTO] = "Goto",
@@ -274,7 +298,7 @@ char *keys[KEY_MAX + 1] = {
 	[KEY_UWB] = "UWB",			[KEY_VIDEO_NEXT] = "Video Next",
 	[KEY_VIDEO_PREV] = "Video Prev",	[KEY_WIMAX] = "WIMAX",
 	[KEY_WLAN] = "WLAN"
-
+#endif
 };
 
 char *absval[6] = { "Value", "Min  ", "Max  ", "Fuzz ", "Flat ", "Resolution "};
@@ -300,8 +324,12 @@ char *absolutes[ABS_MAX + 1] = {
 	[ABS_HAT2Y] = "Hat2Y",		[ABS_HAT3X] = "Hat3X",
 	[ABS_HAT3Y] = "Hat 3Y",		[ABS_PRESSURE] = "Pressure",
 	[ABS_DISTANCE] = "Distance",	[ABS_TILT_X] = "XTilt",
-	[ABS_TILT_Y] = "YTilt",		[ABS_TOOL_WIDTH] = "Tool Width",
-	[ABS_VOLUME] = "Volume",	[ABS_MISC] = "Misc",
+	[ABS_TILT_Y] = "YTilt",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+		[ABS_TOOL_WIDTH] = "Tool Width",
+	[ABS_VOLUME] = "Volume",i
+#endif
+	[ABS_MISC] = "Misc",
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,30)
 	[ABS_MT_TOUCH_MAJOR] = "Touch Major",
 	[ABS_MT_TOUCH_MINOR] = "Touch Minor",
@@ -319,9 +347,12 @@ char *absolutes[ABS_MAX + 1] = {
 
 char *misc[MSC_MAX + 1] = {
 	[ 0 ... MSC_MAX] = NULL,
-	[MSC_SERIAL] = "Serial",	[MSC_PULSELED] = "Pulseled",
+	[MSC_SERIAL] = "Serial",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+	[MSC_PULSELED] = "Pulseled",
 	[MSC_GESTURE] = "Gesture",	[MSC_RAW] = "RawData",
 	[MSC_SCAN] = "ScanCode",
+#endif
 };
 
 char *leds[LED_MAX + 1] = {
@@ -341,7 +372,9 @@ char *repeats[REP_MAX + 1] = {
 char *sounds[SND_MAX + 1] = {
 	[0 ... SND_MAX] = NULL,
 	[SND_CLICK] = "Click",		[SND_BELL] = "Bell",
+#if ! defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
 	[SND_TONE] = "Tone"
+#endif
 };
 
 char **names[EV_MAX + 1] = {
@@ -433,7 +466,11 @@ int main (int argc, char **argv)
 			if (ev[i].type == EV_SYN) {
 				printf("Event: time %ld.%06ld, -------------- %s ------------\n",
 					ev[i].time.tv_sec, ev[i].time.tv_usec, ev[i].code ? "Config Sync" : "Report Sync" );
+#if defined(FEDORA_CORE_R1_KERNEL_2_4_2_4)
+			} else if (ev[i].type == EV_MSC && (/* ev[i].code == MSC_RAW */ 0 || /* ev[i].code == MSC_SCAN */ 0)) {
+#else
 			} else if (ev[i].type == EV_MSC && (ev[i].code == MSC_RAW || ev[i].code == MSC_SCAN)) {
+#endif
 				printf("Event: time %ld.%06ld, type %d (%s), code %d (%s), value %02x\n",
 					ev[i].time.tv_sec, ev[i].time.tv_usec, ev[i].type,
 					events[ev[i].type] ? events[ev[i].type] : "?",
@@ -451,3 +488,4 @@ int main (int argc, char **argv)
 
 	}
 }
+
